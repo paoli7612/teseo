@@ -8,8 +8,15 @@
 </head>
 <body>
 
+    <a href="{% url 'createStudent' %}">Create</a>
+
     {% for student in students %}
-        {{ student }}
+    <div>
+        <img src="{{ student.image.url}}" style="width: 100px" alt=""><br>
+        <b>
+            {{ student.completename }}
+        </b>
+    </div>
     {% endfor %}
     
 </body>
