@@ -26,10 +26,17 @@
                 {% endif %}
               </a>
             </li>
-            {% url 'courses' as courses %}
-            <li class="nav-item {% if request.path == courses %} active {% endif %}">
-              <a class="nav-link" href="{{ courses }}">Courses</a>
-              {% if request.path == courses %}
+            {% url 'pCourses' as pCourses %}
+            <li class="nav-item {% if request.path == pCourses %} active {% endif %}">
+              <a class="nav-link" href="{{ pCourses }}">pCourses</a>
+              {% if request.path == pCourses %}
+              <span class="sr-only">(current)</span>
+              {% endif %}
+            </li>
+            {% url 'login' as login %}
+            <li class="nav-item {% if request.path == login %} active {% endif %}">
+              <a class="nav-link" href="{{ login }}">Login</a>
+              {% if request.path == login %}
               <span class="sr-only">(current)</span>
               {% endif %}
             </li>
