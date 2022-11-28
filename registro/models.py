@@ -1,4 +1,5 @@
 from django.db import models
+from django_extensions.db.fields import AutoSlugField
 
 # Create your models here.
 class Student(models.Model):
@@ -8,8 +9,12 @@ class Student(models.Model):
     def __str__(self):
         return self.name + " " + self.surname
 
+
+
 class Course(models.Model):
     name = models.CharField(max_length=16)
+    slug = AutoSlugField(max_length=16, unique=True, populate_from=('name', ))
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
