@@ -15,12 +15,3 @@ def course(request, slug):
         'course': Course.objects.get(slug=slug)
     })
 
-def account(request, email):
-    print(email)
-    return render(request, 'registro/account/show.html', {
-        'account': Account.objects.get(email=email) 
-    })
-
-
-def login(request):
-    return render(request, 'registro/login.html')
