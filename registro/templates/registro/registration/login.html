@@ -1,0 +1,25 @@
+{% extends 'registro/common.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="w3-panel w3-theme-l1 w3-card-4 w3-round-large">
+  <h1>Login</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="w3-panel w3-half">
+      <label for="username">Username</label>
+      <input class="w3-input w3-card w3-round-large" type="text" name="username" id="username" required="required">
+    </div>
+    <div class="w3-panel w3-half">
+      <label for="password">Password</label>
+      <input class="w3-input w3-card w3-round-large" type="password" name="username" id="password" required="required">
+    </div>
+    <div class="w3-panel w3-right">
+      <a href="{% url 'register' %}" class="w3-margin-right">Register</a>
+      <input type="submit" class="w3-btn w3-white w3-card-4 w3-round-large" value="Singin">
+    </div>
+  </form>
+</div>
+{% endblock %}
