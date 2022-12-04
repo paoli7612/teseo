@@ -1,21 +1,13 @@
 {% extends 'registro/common.html' %}
 
+{% block title %} Courses {% endblock title %}
+
 {% block content %}
-
-<h1>Courses</h1>
-<div class="row">
+    <h1>Courses</h1>
     {% for course in courses %}
-
-    <div class="card col-4">
-        <div class="card-body">
-            <h5 class="card-title">{{ course.name }}</h5>
-            <p class="card-text">
-                {{ course.description }}
-            </p>
-            <a href="{{ course.url }}" class="btn btn-primary">Go somewhere</a>
+        <div class="w3-panel">
+            <a href="{{ course.url }}" class="btn btn-primary">{{ course.name }}</a>
+            <p class="w3-container">{{ course.description }}</p>
         </div>
-    </div>
     {% endfor %}
-</div>
-
 {% endblock %}
