@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import auth
 from .models import *
-from django.shortcuts import redirect
 
 
 def index(request):
@@ -26,6 +26,10 @@ def account(request):
 
 def login(request):
     return render(request, 'registro/registration/login.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 def register(request):
     return render(request, 'registro/registration/register.html')

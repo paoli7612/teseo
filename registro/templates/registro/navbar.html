@@ -1,25 +1,25 @@
 <div class="w3-theme w3-large">
     <div class="w3-bar">
       <div class="w3-margin-left">
-        <a href="{% url 'home' %}" class="w3-bar-item w3-margin-right w3-button {% if request.path == '/' %}w3-white{% endif %}" style="border-radius: 10px 10px 0px 0px">
+        <a href="{% url 'home' %}" class="w3-bar-item w3-margin-right w3-button {% if request.path == '/' %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
           <i class="fa fa-home"></i>
           Home
         </a>
-        <a href="{% url 'courses' %}" class="w3-bar-item w3-margin-right w3-button {% if request.path == '/courses' %}w3-white{% endif %}" style="border-radius: 10px 10px 0px 0px">
+        <a href="{% url 'courses' %}" class="w3-bar-item w3-margin-right w3-button {% if request.path == '/courses' %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
           <i class="fa fa-book"></i>
           Courses
         </a>
       </div>
       <div class="w3-margin-right">
       {% if user.is_authenticated %}
-      <a href="{% url 'account' %}" class="w3-bar-item w3-button w3-right">
-        <i class="fa fa-user"></i>
-        Account
-      </a>
+        <a href="{% url 'account' %}" class="w3-bar-item w3-button w3-right {% if request.path == '/account/' %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
+          <i class="fa fa-user"></i>
+          Account
+        </a>
       {% else %}
-      <a href="{% url 'login' %}" class="w3-bar-item w3-right">
-        login
-      </a>
+        <a href="{% url 'login' %}" class="w3-bar-item w3-right">
+          login
+        </a>
       {% endif %}
         
       </div>

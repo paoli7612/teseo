@@ -5,9 +5,18 @@
 {% block content %}
     <h1>Courses</h1>
     {% for course in courses %}
-        <div class="w3-panel">
-            <a href="{{ course.url }}" class="btn btn-primary">{{ course.name }}</a>
-            <p class="w3-container">{{ course.description }}</p>
+    <div class="w3-third w3-padding">
+        <div class="w3-theme w3-round-large">
+            <div class="w3-panel">
+                <h3>
+                    <a href="{{ course.url }}">
+                    {{ course.name }}</a>
+                </h3>
+                <p>
+                    {{ course.description }}
+                </p>
+            </div>
         </div>
+    </div>
     {% endfor %}
 {% endblock %}
