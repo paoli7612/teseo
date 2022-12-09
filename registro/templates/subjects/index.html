@@ -5,11 +5,7 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="w3-left">subjects</h1>
-  <div class="w3-right w3-padding">
-    New <b>subject</b>
-    <a href="{% url 'new-subject' %}" class="w3-btn w3-circle w3-theme w3-card-4">+</a>
-  </div>
+  <h1 class="w3-left">Subjects</h1>
 
   <div class="w3-row">
     {% for subject in subjects %}
