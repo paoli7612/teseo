@@ -1,7 +1,8 @@
 from django.db import models
 from django_extensions.db.fields import AutoSlugField
 
-class Course(models.Model):
+
+class Subject(models.Model):
     name = models.CharField(max_length=16)
     slug = AutoSlugField(max_length=16, unique=True, populate_from=('name', ))
     description = models.TextField(null=True, blank=True)
@@ -12,11 +13,30 @@ class Course(models.Model):
     def url(self):
         return '/courses/' + self.slug
 
-class Lesson(models.Model):
-    name = models.CharField(max_length=32)
+
+class Course(models.Model):
+    name = models.CharField(max_length=16)
     slug = AutoSlugField(max_length=16, unique=True, populate_from=('name', ))
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, default=None, null=True)
+    description = models.TextField(null=True, blank=True)
+    course = models.ForeignKey(
+        Subject, on_delete=models.CASCADE, default=None, null=True)
 
     def __str__(self):
         return self.name
-    
+
+    def url(self):
+        return '/courses/' + self.slug
+
+
+class Lesson(models.Model):
+    name = models.CharField(max_length=16)
+    slug = AutoSlugField(max_length=16, unique=True, populate_from=('name', ))
+    description = models.TextField(null=True, blank=True)
+    course = models.ForeignKey(
+        Course, on_delete=models.CASCADE, default=None, null=True)
+
+    def __str__(self):
+        return self.name
+
+    def url(self):
+        return '/courses/' + self.slug

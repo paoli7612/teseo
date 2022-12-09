@@ -1,16 +1,13 @@
-from django.contrib import admin
-from django.contrib.auth.views import LoginView, LogoutView
-from django.urls import path, include
-
+from django.urls import path
 from . import views
-from .forms import LoginForm
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('subjects', views.subjects, name='subjects'),
     path('courses', views.courses, name='courses'),
+    path('lessons', views.lessons, name='lessons'),
     path('courses/<slug:slug>', views.course, name='course'),
-    path('login/', views.login, name="login"),
-    path('logout/', views.logout, name="logout"),
-    path('register/', views.register, name="register"),
-    path('account/', views.account, name='account'),
+    path('new-subject/', views.new_course, name='new-subject'),
+    path('new-course/', views.new_course, name='new-course'),
+    path('new-lesson/', views.new_course, name='new-lesson')
 ]

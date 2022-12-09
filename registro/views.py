@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from .models import *
+from .forms import NewCourse
 
 
 def index(request):
@@ -11,10 +12,23 @@ def courses(request):
         'courses': Course.objects.all()
     })
 
+def subjects(request):
+    return render(request, 'registro/subjects/index.html', {
+        'subjects': Course.objects.all()
+    })
+
+
+def lessons(request):
+    return render(request, 'registro/lessons/index.html', {
+        'lessons': Course.objects.all()
+    })
+
+
 def course(request, slug):
     return render(request, 'registro/courses/show.html', {
         'course': Course.objects.get(slug=slug)
     })
+
 
 def account(request):
     if request.user.is_authenticated:
@@ -24,19 +38,18 @@ def account(request):
     else:
         return redirect('login')
 
-def login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = auth.authenticate(username=username, password=password)
-        if user:
-            auth.login(request, user)
-            return redirect('home')
-    return render(request, 'registro/registration/login.html')
-
-def logout(request):
-    auth.logout(request)
-    return redirect('/')
 
 def register(request):
     return render(request, 'registro/registration/register.html')
+
+
+def new_course(request):
+    if request.method == 'POST':
+        f = NewCourse(request.POST)
+        if f.is_valid():
+            f.save()
+            return redirect('/')
+
+    return render(request, 'registro/courses/new_course.html', {
+        'form': NewCourse
+    })

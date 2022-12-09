@@ -1,23 +1,23 @@
 {% extends 'common.html' %}
 
 {% block title %}
-  Courses
+  Subjects
 {% endblock %}
 
 {% block content %}
-  <h1 class="w3-left">Courses</h1>
+  <h1 class="w3-left">subjects</h1>
   <div class="w3-right w3-padding">
-    New <b>Course</b>
-    <a href="{% url 'new-course' %}" class="w3-btn w3-circle w3-theme w3-card-4">+</a>
+    New <b>subject</b>
+    <a href="{% url 'new-subject' %}" class="w3-btn w3-circle w3-theme w3-card-4">+</a>
   </div>
 
   <div class="w3-row">
-    {% for course in courses %}
+    {% for subject in subjects %}
       <div class="w3-third w3-padding">
         <div class="w3-theme w3-round-large">
           <div class="w3-panel">
-            <h3><a href="{{ course.url }}">{{ course.name }}</a></h3>
-            <p>{{ course.description }}</p>
+            <h3><a href="{{ subject.url }}">{{ subject.name }}</a></h3>
+            <p>{{ subject.description }}</p>
           </div>
         </div>
       </div>
