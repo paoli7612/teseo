@@ -11,7 +11,7 @@ class Subject(models.Model):
         return self.name
 
     def url(self):
-        return '/courses/' + self.slug
+        return '/subjects/' + self.slug
 
 
 class Course(models.Model):
@@ -39,4 +39,4 @@ class Lesson(models.Model):
         return self.name
 
     def url(self):
-        return '/courses/' + self.slug
+        return '/lessons/' + self.slug

@@ -1,7 +1,7 @@
 {% extends 'common.html' %}
 
 {% block title %}
-  Courses
+  Lessons
 {% endblock %}
 
 {% block content %}
@@ -12,12 +12,12 @@
   </div>
 
   <div class="w3-row">
-    {% for course in courses %}
+    {% for lesson in lessons %}
       <div class="w3-third w3-padding">
         <div class="w3-theme w3-round-large">
           <div class="w3-panel">
-            <h3><a href="{{ course.url }}">{{ course.name }}</a></h3>
-            <p>{{ course.description }}</p>
+            <h3><a href="{{ lesson.url }}">{{ lesson.name }}</a></h3>
+            <p>{{ lesson.description }}</p>
           </div>
         </div>
       </div>
