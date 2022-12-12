@@ -5,15 +5,15 @@
           <i class="fa fa-home"></i>
           Home
         </a>
-        <a href="{% url 'subjects' %}" class="w3-bar-item w3-margin-right w3-button {% if request.path == '/subjects' %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
+        <a href="{% url 'subjects' %}" class="w3-bar-item w3-margin-right w3-button {% if 'subjects' in request.path %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
           <i class="fa fa-clipboard"></i>
           Subjects
         </a>
-        <a href="{% url 'courses' %}" class="w3-bar-item w3-margin-right w3-button {% if request.path == '/courses' %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
+        <a href="{% url 'courses' %}" class="w3-bar-item w3-margin-right w3-button {% if 'courses' in request.path %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
           <i class="fa fa-book"></i>
           Courses
         </a>
-        <a href="{% url 'lessons' %}" class="w3-bar-item w3-margin-right w3-button {% if request.path == '/lessons' %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
+        <a href="{% url 'lessons' %}" class="w3-bar-item w3-margin-right w3-button {% if 'lessons' in request.path %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
           <i class="fa fa-book-open"></i>
           Lessons
         </a>
