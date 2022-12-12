@@ -3,11 +3,19 @@ from django.contrib import auth
 from django.urls import reverse
 from .models import *
 from .forms import NewCourse, NewLesson
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+
 
 
 def index(request):
     return render(request, 'index.html')
 
+@login_required
+def account(request):
+    return render(request, 'account.html', {
+        'account': request.user
+    })
 
 def subjects(request):
     return render(request, 'subjects/index.html', {

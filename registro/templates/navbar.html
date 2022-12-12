@@ -18,5 +18,11 @@
           Lessons
         </a>
       </div>
+      <div class="w3-margin-right w3-right">
+        <a href="{% url 'account' %}" class="w3-bar-item w3-margin-right w3-button {% if 'accounts' in request.path %}w3-white{% endif %}" style="border-radius: 8px 8px 0px 0px">
+          <i class="fa fa-user"></i>
+          Account
+        </a>
+      </div>
     </div>
   </div>
