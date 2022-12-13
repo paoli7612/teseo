@@ -9,6 +9,6 @@ class NewCourse(forms.ModelForm):
 class NewLesson(forms.ModelForm):
     class Meta:
         model = Lesson
-        fields = ('name', )
+        fields = ('name', 'subject')
 
 

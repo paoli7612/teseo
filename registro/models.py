@@ -18,7 +18,7 @@ class Course(models.Model):
     name = models.CharField(max_length=16)
     slug = AutoSlugField(max_length=16, unique=True, populate_from=('name', ))
     description = models.TextField(null=True, blank=True)
-    course = models.ForeignKey(
+    subject = models.ForeignKey(
         Subject, on_delete=models.CASCADE, default=None, null=True)
 
     def __str__(self):
