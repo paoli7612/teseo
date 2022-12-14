@@ -1,11 +1,15 @@
 {% extends 'common.html' %}
 
+{% block title %}
+  {{ subject.name }}
+{% endblock %}
+
 {% block content %}
 
 <a href="{% url 'subjects' %}"> subjects </a> 
 
-<h2>Course - {{ course.name }}</h2>
-<h4>{{ course.description }}</h4>
+<h2>{{ subject.name }}</h2>
+<h4>{{ subject.description }}</h4>
 
 
 {% endblock %}

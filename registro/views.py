@@ -29,7 +29,7 @@ def lessons(request):
 
 def subject(request, slug):
     return render(request, 'subjects/show.html', {
-        'course': Subject.objects.get(slug=slug)
+        'subject': Subject.objects.get(slug=slug)
     })
 
 def course(request, slug):
@@ -39,7 +39,7 @@ def course(request, slug):
 
 def lesson(request, slug):
     return render(request, 'lessons/show.html', {
-        'course': Lesson.objects.get(slug=slug)
+        'lesson': Lesson.objects.get(slug=slug)
     })
 
 
@@ -62,5 +62,5 @@ def new_lesson(request):
             return redirect(reverse('lessons'))
 
     return render(request, 'lessons/new.html', {
-        'form': NewCourse
+        'form': NewLesson()
     })
