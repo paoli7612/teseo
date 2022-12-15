@@ -1,0 +1,14 @@
+<div class="w3-bar w3-theme w3-xlarge">
+    <div class="w3-margin-left w3-left">
+        <a href="{% url 'home' %}" class="w3-bar-item w3-card">
+            <i class="fa fa-home"></i>
+        </a>
+    </div>
+    <div class="w3-right">
+        {% if user.authenticated %}
+        <a href="{% url 'account' %}" class="w3-bar-item">Utente: {{ user.username }}</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="w3-bar-item">Accedi</a>
+        {% endif %}
+    </div>
+</div>

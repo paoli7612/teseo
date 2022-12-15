@@ -1,0 +1,24 @@
+{% extends 'layout/index.html' %}
+
+{% block content %}
+
+    <div class="w3-panel w3-theme w3-card-4 w3-round-large">
+        <div class="w3-panel">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="w3-panel">
+                    <label for="username">Nome utente</label>
+                    <input class="w3-input w3-round-large" type="text" name="username" id="username" placeholder="provola">
+                </div>
+                <div class="w3-panel">
+                    <label for="password">Password</label>
+                    <input class="w3-input w3-round-large" type="password" name="password" id="password" placeholder="provolone">
+                </div>
+                <div class="w3-panel w3-center">
+                    <input class="w3-btn w3-round-large w3-white" type="submit" value="Accedi">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}
