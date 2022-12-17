@@ -2,4 +2,7 @@
 
 {% block content %}
     <h1>ciao</h1>
+    {% if user.authenticated %}
+        sei {{ user.username }}
+    {% endif %}
 {% endblock content %}
