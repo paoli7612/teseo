@@ -1,9 +1,9 @@
 {% extends 'layout/index.html' %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}{{ studente.cognome }}{% endblock title %}
 
 {% block content %}
-    <h1>ciao</h1>
+    <h1>{{ studente.nome_completo}}</h1>
     {% if user.authenticated %}
         sei {{ user.username }}
     {% endif %}

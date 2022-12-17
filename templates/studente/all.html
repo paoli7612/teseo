@@ -1,0 +1,29 @@
+{% extends 'layout/index.html' %}
+
+{% block title %}
+  Students
+{% endblock %}
+
+{% block content %}
+  <h1>Studenti</h1>
+  <table class="w3-table-all">
+    <thead>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Età</th>
+        <td></td>
+    </thead>
+    {% for studente in studenti %}
+      <tr>
+        <td>{{ studente.nome }}</td>
+        <td>{{ studente.cognome }}</td>
+        <td>{{ studente.eta }}</td>
+        <td>
+            <a href="{% url 'studente' slug=studente.slug %}" class="w3-btn">
+                <i class="fa fa-user"></i>
+            </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
