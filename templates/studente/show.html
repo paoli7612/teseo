@@ -4,7 +4,18 @@
 
 {% block content %}
     <h1>{{ studente.nome_completo}}</h1>
-    {% if user.authenticated %}
-        sei {{ user.username }}
-    {% endif %}
+
+    <table class="w3-table-all">
+        <tr>
+            <th>Indirizzo</th>
+            <td>
+                <a href="{{ studente.indirizzo.url }}">{{ studente.indirizzo }}</a>
+            </td>
+        </tr>
+        <tr>
+            <th>Data di nascita</th>
+            <td>{{ studente.nascita }}</td>
+        </tr>
+    </table>
+
 {% endblock content %}

@@ -13,6 +13,10 @@ class Indirizzo(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    def url(self):
+        return reverse('indirizzo', kwargs={'slug':self.slug})
+
 
 class Studente(models.Model):
     class Meta:
@@ -31,6 +35,8 @@ class Studente(models.Model):
         import datetime
         return int((datetime.date.today() - self.nascita).days / 365.25  )
 
+    def url(self):
+        return reverse('studente', kwargs={'slug':self.slug})
 
     def __str__(self):
         return self.nome_completo()
