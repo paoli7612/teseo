@@ -36,6 +36,12 @@ def studente(request, slug):
         'studente': Studente.objects.get(slug=slug)
     })
 
+#MATERIE
+def materie(request):
+    return render(request, 'indirizzo/all.html', {
+        'materie': Indirizzo.objects.all()
+    })
+
 #INDIRIZZI
 def indirizzi(request):
     return render(request, 'indirizzo/all.html', {

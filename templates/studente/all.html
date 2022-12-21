@@ -19,7 +19,7 @@
         <td>{{ studente.cognome }}</td>
         <td>{{ studente.eta }}</td>
         <td>
-            <a href="{% url 'studente' slug=studente.slug %}" class="w3-btn">
+            <a href="{{ studente.url }}" class="w3-btn">
                 <i class="fa fa-user"></i>
             </a>
         </td>

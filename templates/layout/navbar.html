@@ -6,6 +6,9 @@
         <a href="{% url 'studenti' %}" class="w3-bar-item w3-card {% if 'studenti' in request.path %}w3-white{% endif %}">
             <i class="fa fa-users"></i>
         </a>
+        <a href="{% url 'materie' %}" class="w3-bar-item w3-card {% if 'indirizzi' in request.path %}w3-white{% endif %}">
+            <i class="fa fa-box"></i>
+        </a>
         <a href="{% url 'indirizzi' %}" class="w3-bar-item w3-card {% if 'indirizzi' in request.path %}w3-white{% endif %}">
             <i class="fa fa-bars"></i>
         </a>
