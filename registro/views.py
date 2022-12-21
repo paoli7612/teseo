@@ -42,7 +42,7 @@ def indirizzi(request):
         'indirizzi': Indirizzo.objects.all()
     })
 
-def studente(request, slug):
-    return render(request, 'studente/show.html', {
-        'studente': Studente.objects.get(slug=slug)
+def indirizzo(request, slug):
+    return render(request, 'indirizzo/show.html', {
+        'indirizzo': Indirizzo.objects.get(slug=slug)
     })
