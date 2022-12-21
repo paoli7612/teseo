@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django import urls
-from registro.models import Studente
+from registro.models import Studente, Indirizzo
 # Create your views here.
 
 def home(request):
@@ -25,9 +25,21 @@ def account(request):
         'user': request.user
     })
 
+# STUDENTI
 def studenti(request):
     return render(request, 'studente/all.html', {
         'studenti': Studente.objects.all()
+    })
+
+def studente(request, slug):
+    return render(request, 'studente/show.html', {
+        'studente': Studente.objects.get(slug=slug)
+    })
+
+#INDIRIZZI
+def indirizzi(request):
+    return render(request, 'indirizzo/all.html', {
+        'indirizzi': Indirizzo.objects.all()
     })
 
 def studente(request, slug):

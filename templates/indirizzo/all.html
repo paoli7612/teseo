@@ -1,0 +1,27 @@
+{% extends 'layout/index.html' %}
+
+{% block title %}
+  Indirizzi
+{% endblock %}
+
+{% block content %}
+  <h1>Indirizzi</h1>
+  <table class="w3-table-all">
+    <thead>
+        <th>Nome</th>
+        <th>Descrizione</th>
+        <td></td>
+    </thead>
+    {% for indirizzo in indirizzi %}
+      <tr>
+        <td>{{ indirizzo.nome }}</td>
+        <td>{{ indirizzo.descrizione }}</td>
+        <td>
+            <a href="{% url 'indirizzo' slug=indirizzo.slug %}" class="w3-btn">
+                <i class="fa fa-circle-info"></i>
+            </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

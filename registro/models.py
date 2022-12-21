@@ -9,6 +9,7 @@ class Indirizzo(models.Model):
     nome = models.CharField(max_length=32)
     descrizione = models.TextField(null=True, blank=True)
     liceo = models.BooleanField()
+    slug = AutoSlugField(max_length=32, unique=True, populate_from=('nome', ))
 
     def __str__(self):
         return self.nome
